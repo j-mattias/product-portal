@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import url("App.css");
+@import url("ErrorPage.css");
 @import url("Header.css");
 
 :root {
@@ -71,9 +72,22 @@ a {
   text-decoration: none;
   font-family: var(--heading-font);
   font-weight: 600;
+  background-color: var(--dark-col);
+  transition: all 0.3s ease-out;
 }
 
 /* Utility */
 .max-width {
   max-width: var(--max-width);
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.b-radius-4 {
+  border-radius: 4px;
 }

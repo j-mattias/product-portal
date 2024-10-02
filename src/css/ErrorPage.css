@@ -1,0 +1,14 @@
+.error-page {
+  .error-page__title {
+    font-weight: 800;
+  }
+
+  .error-page__link {
+    background-color: var(--offset-col-2);
+    padding: 1rem;
+
+    &:hover {
+      background-color: var(--offset-col-1);
+    }
+  }
+}
