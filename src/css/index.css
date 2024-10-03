@@ -4,6 +4,8 @@
 @import url("ErrorPage.css");
 @import url("Header.css");
 @import url("ProductCard.css");
+@import url("ProductList.css");
+@import url("ProductsPage.css");
 
 :root {
   --bg-col: #546170;
@@ -53,6 +55,7 @@ h6 {
 main {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   padding: 2rem 1rem;
   background-color: var(--bright-col);
 }
@@ -96,7 +99,6 @@ a {
 .flex-col {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 1rem;
 }
 
