@@ -1,0 +1,24 @@
+.product-info {
+  .product-info__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+
+  .product-info__wrapper {
+    border: 2px dotted var(--faded-col);
+    border-inline: none;
+    padding: 1rem;
+
+    &:first-child, &:nth-child(2) {
+      border-bottom: none;
+    }
+
+    &:last-child, &:nth-child(3) {
+      border-bottom: none;
+    }
+
+    .fa-truck {
+      font-size: 1.9rem;
+    }
+  }
+}
