@@ -8,7 +8,7 @@ export interface IProduct {
   price: number;
   rating: number;
   returnPolicy: string;
-  reviews: IComment[];
+  reviews: IReview[];
   shippingInformation: string;
   stock: number;
   tags: string[];
@@ -23,7 +23,7 @@ interface IDimensions {
   depth: number;
 }
 
-interface IComment {
+export interface IReview {
   comment: string;
   date: string;
   rating: number;
@@ -45,7 +45,7 @@ export interface IProductRaw {
   price: number;
   rating: number;
   returnPolicy: string;
-  reviews: IComment[];
+  reviews: IReview[];
   shippingInformation: string;
   sku: string;
   stock: number;

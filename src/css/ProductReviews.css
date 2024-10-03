@@ -1,0 +1,15 @@
+.product-reviews {
+  .product-review {
+    .product-review__wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .product-review__date {
+        color: var(--faded-col);
+      }
+    }
+
+    border: 1px solid var(--faded-col);
+    padding: 1rem;
+  }
+}

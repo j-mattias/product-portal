@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useProductsContext } from "../contexts";
-import { ImageGallery, ProductDetails, ProductInfo } from "../components";
+import { ImageGallery, ProductDetails, ProductInfo, ProductReviews } from "../components";
 
 export function ProductDetailsPage() {
   const { id } = useParams();
@@ -21,6 +21,7 @@ export function ProductDetailsPage() {
           <ImageGallery images={product.images} title={product.title} />
           <ProductDetails product={product} />
           <ProductInfo product={product} />
+          <ProductReviews reviews={product.reviews} />
         </section>
       )}
     </>
