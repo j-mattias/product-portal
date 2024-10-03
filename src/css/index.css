@@ -87,7 +87,6 @@ a {
   text-decoration: none;
   font-family: var(--heading-font);
   font-weight: 600;
-  background-color: var(--dark-col);
   transition: all 0.3s ease-out;
 }
 

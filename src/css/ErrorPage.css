@@ -1,4 +1,6 @@
 .error-page {
+  align-items: center;
+
   .error-page__title {
     font-weight: 800;
   }
