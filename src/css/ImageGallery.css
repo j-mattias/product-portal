@@ -6,7 +6,7 @@
   .image-gallery__hero {
     grid-column: 1 / -1;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     aspect-ratio: 1 / 1;
   }
