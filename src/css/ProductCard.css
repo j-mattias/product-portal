@@ -1,0 +1,29 @@
+.product-card {
+  .product-card__wrapper {
+    padding: 0.5rem;
+
+    .product-card__title {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .product-card__price {
+      color: var(--price-col);
+      font-weight: 700;
+      font-family: var(--heading-font);
+    }
+
+    .product-card__stock {
+      color: var(--faded-col);
+      align-self: flex-end;
+    }
+  }
+}
+
+.product-card,
+.product-card__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

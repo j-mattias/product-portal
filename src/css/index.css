@@ -3,6 +3,7 @@
 @import url("App.css");
 @import url("ErrorPage.css");
 @import url("Header.css");
+@import url("ProductCard.css");
 
 :root {
   --bg-col: #546170;
@@ -45,7 +46,7 @@ h5,
 h6 {
   font-family: var(--heading-font);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--dark-col);
 }
 
@@ -64,7 +65,18 @@ img {
 
 button {
   font-family: var(--heading-font);
+  font-weight: 600;
   color: var(--bright-col);
+  background-color: var(--offset-col-2);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: var(--offset-col-1);
+  }
 }
 
 a {
@@ -90,4 +102,8 @@ a {
 
 .b-radius-4 {
   border-radius: 4px;
+}
+
+.box-shadow {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
