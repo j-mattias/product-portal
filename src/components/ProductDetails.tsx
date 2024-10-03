@@ -10,7 +10,7 @@ export function ProductDetails({product}: IProductDetailsProps) {
     <section className="product-details flex-col">
       <div className="product-details__title-wrapper">
         <h1 className="product-details__title">{product.title}</h1>
-        <h4 className="product-details__brand">{product.brand}</h4>
+        {product.brand && <h4 className="product-details__brand">{product.brand}</h4>}
       </div>
       <h3 className="product-details__rating">Rating: {product.rating}</h3>
       <h2 className="product-details__price">$ {product.price}</h2>
