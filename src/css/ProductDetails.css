@@ -1,0 +1,16 @@
+.product-details {
+  .product-details__title-wrapper {
+    .product-details__brand {
+      color: var(--faded-col);
+    }
+  }
+
+  .product-details__price {
+    color: var(--price-col);
+  }
+
+  .product-details__category,
+  .product-details__tags {
+    text-transform: capitalize;
+  }
+}

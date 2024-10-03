@@ -5,6 +5,7 @@
 @import url("Header.css");
 @import url("ImageGallery.css");
 @import url("ProductCard.css");
+@import url("ProductDetails.css");
 @import url("ProductList.css");
 @import url("ProductsPage.css");
 
@@ -39,6 +40,10 @@ body {
   color: var(--dark-col);
   background-color: var(--bg-col);
   min-height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
 }
 
 h1,
