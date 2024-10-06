@@ -1,4 +1,3 @@
-import { ProductCard } from "../components";
 import { useProductsContext } from "../contexts";
 import { useFetchProducts } from "../customHooks";
 
@@ -14,7 +13,6 @@ export function HomePage() {
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {products.length > 0 && <button onClick={() => console.log(products)}>Click</button>}
-      {products.length > 0 && <ProductCard product={products[0]} />}
     </>
   );
 }

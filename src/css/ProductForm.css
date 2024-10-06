@@ -1,0 +1,62 @@
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--dark-col);
+  font-family: var(--heading-font);
+  font-style: italic;
+  font-weight: 400;
+
+  .input-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+
+    .input-label__text {
+      &::after {
+        content: "*";
+        margin-left: 0.2rem;
+        color: var(--warning-col);
+      }
+    }
+
+    input,
+    textarea,
+    select {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      box-shadow: 0 0 4px var(--shadow-col);
+    }
+
+    #input-category {
+      background-color: white;
+    }
+
+    #input-description {
+      height: 8rem;
+      resize: none;
+    }
+  }
+
+  .price-stock-wrapper,
+  .dimensions-wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .product-form__submit,
+  .product-form__delete {
+    margin-top: 0.5rem;
+    padding-block: 1rem;
+  }
+
+  .product-form__delete {
+    background-color: var(--warning-col);
+
+    &:hover {
+      background-color: hsl(from var(--warning-col) h s calc(l - 10));
+    }
+  }
+}

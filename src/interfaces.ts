@@ -1,5 +1,5 @@
 export interface IProduct {
-  brand: string | null;
+  brand: string;
   category: string;
   description: string;
   dimensions: IDimensions;

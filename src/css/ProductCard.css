@@ -9,6 +9,12 @@
   .product-card__figure {
     display: flex;
     justify-content: center;
+    padding: 0.2rem;
+
+    img {
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+    }
   }
 
   .product-card__wrapper {
@@ -29,6 +35,13 @@
     .product-card__stock {
       color: var(--faded-col);
       align-self: flex-end;
+    }
+
+    .product-card__edit {
+      background-color: var(--offset-col-2);
+      padding: 0.5rem 2rem;
+      font-family: var(--heading-font);
+      text-align: center;
     }
   }
 }

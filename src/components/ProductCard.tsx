@@ -6,6 +6,7 @@ interface IProductCardProps {
 }
 
 export function ProductCard({ product }: IProductCardProps) {
+
   return (
     <article className="product-card b-radius-4 box-shadow">
       <Link className="product-card__link" to={`/product/${product.id}`}>
@@ -24,8 +25,7 @@ export function ProductCard({ product }: IProductCardProps) {
         <p className="product-card__rating">Rating: {product.rating}</p>
         <p className="product-card__price">$ {product.price}</p>
         <p className="product-card__stock">Stock: {product.stock}</p>
-        <button className="product-card__edit">Edit</button>
-        <button className="product-card__delete">Delete</button>
+        <Link className="product-card__edit b-radius-4" to={`/edit-product/${product.id}`}>Edit</Link>
       </div>
     </article>
   );

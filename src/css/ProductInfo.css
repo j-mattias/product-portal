@@ -7,7 +7,7 @@
   .product-info__wrapper {
     border: 2px dotted var(--faded-col);
     border-inline: none;
-    padding: 1rem;
+    padding-block: 1rem;
 
     &:first-child, &:nth-child(2) {
       border-bottom: none;

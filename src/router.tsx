@@ -1,6 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import { RootLayout } from "./layouts";
-import { ErrorPage, HomePage, ProductDetailsPage, ProductsPage } from "./pages";
+import { AddProductPage, EditProductPage, ErrorPage, HomePage, ProductDetailsPage, ProductsPage } from "./pages";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -8,6 +8,8 @@ export const router = createBrowserRouter(
       <Route element={<HomePage />} index />
       <Route element={<ProductsPage />} path="products" />
       <Route element={<ProductDetailsPage />} path="product/:id" />
+      <Route element={<AddProductPage />} path="add-product" />
+      <Route element={<EditProductPage />} path="edit-product/:id" />
       <Route element={<ErrorPage />} path="*" />
     </Route>
   )

@@ -13,6 +13,9 @@ export function Header() {
         <NavLink className="navbar__link" to="products">
           Products
         </NavLink>
+        <NavLink className="navbar__link navbar__link--add" to="add-product">
+          Add
+        </NavLink>
       </nav>
     </header>
   );

@@ -19,6 +19,12 @@
       }
     }
 
+    .navbar__link--add::after {
+      content: "\2b";
+      font-family: "Font Awesome 6 Free";
+      margin-left: 0.2rem;
+    }
+
     a.active {
       box-shadow: inset 0 -6px 0 var(--offset-col-1);
     }
