@@ -1,6 +1,6 @@
 import { useProductsContext } from "../contexts";
 import { categories } from "../data";
-import { getNewId, validateProduct } from "../helpers";
+import { fetchData, getNewId, validateProduct } from "../helpers";
 import { IProduct } from "../interfaces";
 
 type TType = "Add" | "Edit";
@@ -10,14 +10,25 @@ interface IProductFormProps {
   product?: IProduct;
 }
 
+const BASE_URL = "https://dummyjson.com/products/";
+
 export function ProductForm({ type, product }: IProductFormProps) {
   const { products, setProducts } = useProductsContext();
 
-  const handleDelete = (id: number) => {
-    setProducts((p) => p.filter((p) => p.id !== id));
+  const handleDelete = async (id: number) => {
+    // Simulate a DELETE request
+    try {
+      await fetchData(BASE_URL + id, "Failed to add product", {
+        method: "DELETE",
+      });
+
+      setProducts((p) => p.filter((p) => p.id !== id));
+    } catch (error: any) {
+      console.error(error);
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const target = e.target as HTMLFormElement;
@@ -60,19 +71,41 @@ export function ProductForm({ type, product }: IProductFormProps) {
     }
 
     if (type === "Add") {
-      // Add product
-      setProducts((p) => [...p, productObj]);
-    } else if (type === "Edit" && product) {
-      // Check that it's a valid product being edited
-      const isValidProduct = products.some((p) => p.id === product.id);
-      
-      if (isValidProduct) {
-        // Find the index of the product and update the index position with the updated product
-        const index = products.findIndex((p) => p.id === product.id);
-        setProducts((p) => {
-          p.splice(index, 1, productObj);
-          return [...p];
+      // Simulate a POST request
+      try {
+        await fetchData(BASE_URL + "add", "Failed to add product", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(productObj),
         });
+  
+        // Add product
+        setProducts((p) => [...p, productObj]);
+      } catch(error: any) {
+        console.error(error);
+      }
+    } else if (type === "Edit" && product) {
+      // Simulate a PUT (Update) request
+      try {
+        await fetchData(BASE_URL + product.id, "Failed to edit product", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(product),
+        });
+
+        // Check that it's a valid product being edited
+        const isValidProduct = products.some((p) => p.id === product.id);
+  
+        if (isValidProduct) {
+          // Find the index of the product and update the index position with the updated product
+          const index = products.findIndex((p) => p.id === product.id);
+          setProducts((p) => {
+            p.splice(index, 1, productObj);
+            return [...p];
+          });
+        }
+      } catch (error: any) {
+        console.error(error);
       }
     }
     console.log("productObj", productObj);

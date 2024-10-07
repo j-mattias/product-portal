@@ -1,4 +1,4 @@
-import { IProduct, IProductRaw } from "./interfaces";
+import { IFetchOptions, IProduct, IProductRaw } from "./interfaces";
 
 // Returns a new array with product objects mapped to IProduct scheme
 export function mapProductData(arr: IProductRaw[]) {
@@ -93,3 +93,18 @@ function isValidNumber(n: number) {
 function isValidNumberInRange(n: number, high?: number, low = 0) {
   return isValidNumber(n) && n >= low && (high ? n <= high : true);
 }
+
+// Generic fetch function to avoid repetition
+export async function fetchData(url: string, notOkMsg: string, options?: IFetchOptions) {
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) {
+      throw new Error(notOkMsg);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error: any) {
+    console.error(error.message);
+    throw error;
+  }
+};

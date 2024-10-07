@@ -62,3 +62,9 @@ interface IMeta {
   qrCode: string;
   updatedAt: string;
 }
+
+export interface IFetchOptions {
+  method: string;
+  headers?: { "Content-Type": string };
+  body?: string;
+}
