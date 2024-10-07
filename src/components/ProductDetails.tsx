@@ -1,4 +1,4 @@
-import { StarRating } from ".";
+import { StarRating, Stock } from ".";
 import { IProduct } from "../interfaces"
 
 interface IProductDetailsProps {
@@ -17,7 +17,7 @@ export function ProductDetails({product}: IProductDetailsProps) {
       <h2 className="product-details__price">$ {product.price}</h2>
       <h3 className="product-details__category">Category: {product.category}</h3>
       <h3 className="product-details__tags">Tags: {product.tags.join(", ")}</h3>
-      <h3 className="product-details__stock">Stock: {product.stock}</h3>
+      <Stock stock={product.stock} className="product-details__stock" />
     </section>
   )
 }

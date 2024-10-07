@@ -13,4 +13,8 @@
   .product-details__tags {
     text-transform: capitalize;
   }
+
+  .product-details__stock {
+    font-size: 1.4rem;
+  }
 }

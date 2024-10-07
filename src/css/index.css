@@ -16,6 +16,7 @@
 @import url("ProductReviews.css");
 @import url("ProductsPage.css");
 @import url("StarRating.css");
+@import url("Stock.css");
 
 :root {
   --bg-col: #546170;

@@ -9,3 +9,4 @@ export * from "./ProductInfo";
 export * from "./ProductList";
 export * from "./ProductReviews";
 export * from "./StarRating";
+export * from "./Stock";
