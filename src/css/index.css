@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+@import url("Alert.css");
 @import url("App.css");
 @import url("AddProductPage.css");
 @import url("EditProductPage.css");
@@ -26,6 +27,7 @@
   --bright-col: #f5f5f5;
   --shadow-col: rgba(0, 0, 0, 0.4);
   --warning-col: rgb(231, 52, 40);
+  --success-col: rgb(69, 207, 76);
 
   --text-font: "Hind", sans-serif;
   --heading-font: "Montserrat", sans-serif;

@@ -1,29 +1,35 @@
+import { useNavigate } from "react-router-dom";
 import { useProductsContext } from "../contexts";
 import { categories } from "../data";
 import { fetchData, getNewId, validateProduct } from "../helpers";
-import { IProduct } from "../interfaces";
+import { IProduct, TAlertColors } from "../interfaces";
 
 type TType = "Add" | "Edit";
 
 interface IProductFormProps {
   type: TType;
   product?: IProduct;
+  handleMessage: (msg: string, color: TAlertColors) => void;
 }
 
 const BASE_URL = "https://dummyjson.com/products/";
 
-export function ProductForm({ type, product }: IProductFormProps) {
+export function ProductForm({ type, product, handleMessage }: IProductFormProps) {
   const { products, setProducts } = useProductsContext();
+  const navigate = useNavigate();
 
   const handleDelete = async (id: number) => {
     // Simulate a DELETE request
     try {
-      await fetchData(BASE_URL + id, "Failed to add product", {
+      await fetchData(BASE_URL + id, "Failed to delete product", {
         method: "DELETE",
       });
 
       setProducts((p) => p.filter((p) => p.id !== id));
+      navigate("/products", {state: {message: "Product was deleted"}})
+      handleMessage("Product was deleted", "red");
     } catch (error: any) {
+      handleMessage(error.message, "red");
       console.error(error);
     }
   };
@@ -67,6 +73,7 @@ export function ProductForm({ type, product }: IProductFormProps) {
     // Validate the product
     if (!validateProduct(productObj)) {
       console.log("Please fill out all fields, a minimum of 1 image is required");
+      handleMessage("Please fill out all fields, a minimum of 1 image is required", "red");
       return;
     }
 
@@ -81,7 +88,13 @@ export function ProductForm({ type, product }: IProductFormProps) {
   
         // Add product
         setProducts((p) => [...p, productObj]);
+
+        handleMessage("Product was added", "green");
+
+        // Reset the form inputs
+        target.reset();
       } catch(error: any) {
+        handleMessage(error.message, "red");
         console.error(error);
       }
     } else if (type === "Edit" && product) {
@@ -90,7 +103,7 @@ export function ProductForm({ type, product }: IProductFormProps) {
         await fetchData(BASE_URL + product.id, "Failed to edit product", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(product),
+          body: JSON.stringify({product}),
         });
 
         // Check that it's a valid product being edited
@@ -103,9 +116,11 @@ export function ProductForm({ type, product }: IProductFormProps) {
             p.splice(index, 1, productObj);
             return [...p];
           });
+          handleMessage("Product has been edited", "green");
         }
       } catch (error: any) {
         console.error(error);
+        handleMessage(error.message, "red");
       }
     }
     console.log("productObj", productObj);

@@ -68,3 +68,5 @@ export interface IFetchOptions {
   headers?: { "Content-Type": string };
   body?: string;
 }
+
+export type TAlertColors = "green" | "red";

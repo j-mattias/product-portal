@@ -1,0 +1,32 @@
+.alert {
+  padding: 1rem 2rem;
+  color: var(--bright-col);
+  font-weight: 500;
+  font-family: var(--heading-font);
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+
+  position: absolute;
+  left: 50%;
+  top: 0;
+  translate: -50% -10%;
+  animation: slide-in 3s ease-out forwards;
+}
+
+.alert-green {
+  background-color: var(--success-col);
+}
+
+.alert-red {
+  background-color: var(--warning-col);
+}
+
+@keyframes slide-in {
+  0% {transform: translateY(-100%)}
+  15% {transform: translateY(130%)}
+  85% {transform: translateY(130%)}
+  100% {transform: translateY(-100%)}
+}

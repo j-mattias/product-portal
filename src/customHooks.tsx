@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useProductsContext } from "./contexts";
 import { mapProductData } from "./helpers";
+import { TAlertColors } from "./interfaces";
 
 // Fetch product data if it's not already stored in the products context
 export function useFetchProducts(url: string) {
@@ -45,4 +46,21 @@ export function useFetchProducts(url: string) {
   }, [url]);
 
   return { isPending, error };
+}
+
+// Used to display an alert message
+export function useMessage() {
+  const [message, setMessage] = useState("");
+  const [color, setColor] = useState<TAlertColors>("green");
+ 
+  const handleMessage = (msg: string, color: TAlertColors) => {
+    setMessage(msg);
+    setColor(color);
+
+    setTimeout(() => {
+      setMessage("");
+    }, 3000);
+  };
+
+  return {message, color, handleMessage};
 }
