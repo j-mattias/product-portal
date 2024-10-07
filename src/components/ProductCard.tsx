@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { IProduct } from "../interfaces";
+import { StarRating } from "./StarRating";
 
 interface IProductCardProps {
   product: IProduct;
@@ -22,7 +23,7 @@ export function ProductCard({ product }: IProductCardProps) {
         <Link className="product-card__link" to={`/product/${product.id}`}>
           <h4 className="product-card__title">{product.title}</h4>
         </Link>
-        <p className="product-card__rating">Rating: {product.rating}</p>
+        <StarRating rating={product.rating} numStars={5} />
         <p className="product-card__price">$ {product.price}</p>
         <p className="product-card__stock">Stock: {product.stock}</p>
         <Link className="product-card__edit b-radius-4" to={`/edit-product/${product.id}`}>Edit</Link>
