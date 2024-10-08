@@ -3,14 +3,17 @@
 @import url("Alert.css");
 @import url("App.css");
 @import url("AddProductPage.css");
+@import url("Carousel.css");
 @import url("EditProductPage.css");
 @import url("ErrorPage.css");
 @import url("Header.css");
+@import url("HomePage.css");
 @import url("ImageGallery.css");
 @import url("Pagination.css");
 @import url("ProductCard.css");
 @import url("ProductDetails.css");
 @import url("ProductDetailsPage.css");
+@import url("ProductDisplay.css");
 @import url("ProductForm.css");
 @import url("ProductInfo.css");
 @import url("ProductList.css");
