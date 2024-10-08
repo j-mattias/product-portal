@@ -11,8 +11,6 @@ export function ProductInfo({product}: IProductInfoProps) {
     <section className="product-info flex-col">
         <h2 className="product-info__title">Description</h2>
         <p className="product-info__text">{product.description}</p>
-      {/* <div className="product-info__wrapper">
-      </div> */}
       <div className="product-info__grid">
         <div className="product-info__wrapper flex-col">
           <h2 className="product-info__title">Warranty</h2>

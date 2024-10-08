@@ -1,8 +1,8 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Header } from "../components";
 import { useFetchProducts } from "../customHooks";
 
-const URL = "https://dummyjson.com/products?limit=10";
+const URL = "https://dummyjson.com/products?limit=0";
 
 export function RootLayout() {
   const { isPending, error } = useFetchProducts(URL);
@@ -15,6 +15,7 @@ export function RootLayout() {
         {isPending && <div>Loading...</div>}
         <Outlet />
       </main>
+      <ScrollRestoration />
     </>
   );
 }

@@ -1,0 +1,28 @@
+.pagination {
+  margin-inline: auto;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+
+  .pagination__item {
+    .pagination__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2rem;
+      min-width: 2rem;
+      color: var(--dark-col);
+
+      &:hover:not(.pagination__link--next, .pagination__link--prev) {
+        background-color: var(--offset-col-1);
+        color: var(--bright-col);
+      }
+    }
+    
+    .pagination__active {
+      background-color: var(--offset-col-2);
+      color: var(--bright-col);
+    }
+  }
+}

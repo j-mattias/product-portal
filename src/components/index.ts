@@ -2,6 +2,7 @@ export * from "./App";
 export * from "./Alert";
 export * from "./Header";
 export * from "./ImageGallery";
+export * from "./Pagination";
 export * from "./ProductCard";
 export * from "./ProductDetails";
 export * from "./ProductForm";
