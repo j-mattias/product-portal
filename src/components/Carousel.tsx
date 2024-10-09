@@ -49,15 +49,15 @@ export function Carousel({ products }: ICarouselProps) {
           onClick={handleNext}
         ></i>
       </div>
-      <div className="carousel-dots">
+      <ul className="carousel-dots">
         {products.map((_, i) => (
-          <span
+          <li
             className={`carousel-dots__dot ${i === currentIndex ? "dot-active" : ""}`}
             onClick={() => setCurrentIndex(i)}
             key={i}
-          ></span>
+          ></li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
