@@ -1,6 +1,6 @@
 .carousel {
   background-color: white;
-  width: 90%;
+  width: 100%;
   min-height: 25rem;
   height: fit-content;
   position: relative;
@@ -31,14 +31,19 @@
     height: 100%;
     padding: 0.6rem;
     cursor: pointer;
+    transition: all 0.3s ease-out;
+    
+    &:hover {
+      scale: 1.2;
+    }
   }
 
   #next-btn {
-    right: -3rem;
+    right: 0;
   }
 
   #prev-btn {
-    left: -3rem;
+    left: 0;
   }
 }
 
