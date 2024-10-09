@@ -1,4 +1,6 @@
 .product-card {
+  background-color: var(--white-col);
+
   .product-card__link {
     &:hover + .product-card__wrapper > a > h4,
     &:hover h4 {

@@ -7,7 +7,7 @@
     object-fit: contain;
     object-position: center;
     aspect-ratio: 1 / 1;
-    background-color: white;
+    background-color: var(--white-col);
   }
 
   .image-gallery__wrapper {
