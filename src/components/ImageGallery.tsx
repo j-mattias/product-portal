@@ -17,19 +17,23 @@ export function ImageGallery({ images, title }: IImageGalleryProps) {
   return (
     <figure className="image-gallery">
       <img
-        className="image-gallery__hero box-shadow b-radius-4"
+        className="image-gallery__hero b-radius-4"
         src={mainImage}
         alt={`${title} packshot image`}
       />
-      {images.map((image, i) => (
-        <img
-          className="image-gallery__preview box-shadow b-radius-4"
-          src={image}
-          alt={`${title} packshot image ${i}`}
-          key={image}
-          onClick={handleClick}
-        />
-      ))}
+      <div className="image-gallery__wrapper">
+        {images.map((image, i) => (
+          <img
+            className={`image-gallery__preview ${
+              mainImage === image ? "box-shadow b-radius-4" : ""
+            }`}
+            src={image}
+            alt={`${title} packshot image ${i}`}
+            key={image}
+            onClick={handleClick}
+          />
+        ))}
+      </div>
     </figure>
   );
 }
