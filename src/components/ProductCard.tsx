@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import { IProduct } from "../interfaces";
 import { StarRating } from "./StarRating";
 import { Stock } from "./Stock";
+import { useCartContext } from "../contexts";
 
 interface IProductCardProps {
   product: IProduct;
 }
 
 export function ProductCard({ product }: IProductCardProps) {
+  const { updateCart } = useCartContext();
 
   return (
     <article className="product-card b-radius-4 box-shadow">
@@ -27,7 +29,10 @@ export function ProductCard({ product }: IProductCardProps) {
         <StarRating rating={product.rating} numStars={5} />
         <p className="product-card__price">$ {product.price}</p>
         <Stock stock={product.stock} className="product-card__stock" />
-        <Link className="product-card__edit b-radius-4" to={`/edit-product/${product.id}`}>Edit</Link>
+        <button onClick={() => updateCart("add", product, 1)}>Add To Cart</button>
+        <Link className="product-card__edit b-radius-4" to={`/edit-product/${product.id}`}>
+          Edit
+        </Link>
       </div>
     </article>
   );

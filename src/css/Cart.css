@@ -1,0 +1,53 @@
+.cart-backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: brightness(40%);
+}
+
+.cart {
+  position: fixed;
+  width: 500px;
+  background-color: var(--bright-col);
+  top: 50%;
+  translate: 0 -50%;
+  padding: 1rem;
+  display: flex;
+  z-index: 5;
+
+  .cart__close {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: scale 0.3s ease-out;
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+
+  .cart__empty {
+    text-align: center;
+  }
+
+  .cart__total {
+    margin-left: auto;
+  }
+
+  .cart__btn-checkout,
+  .cart_btn-clear {
+    padding: 1rem;
+  }
+
+  /* Temp styling since button doesn't do anyhting yet */
+  .cart__btn-checkout {
+    background-color: var(--faded-col);
+    cursor: not-allowed;
+  }
+
+  .cart_btn-clear {
+    align-self: flex-end;
+  }
+}

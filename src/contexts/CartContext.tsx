@@ -2,6 +2,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import { ICart, IProduct } from "../interfaces";
 
 type TOperand = "+" | "-";
+type TAction = "add" | "remove" | "clear";
 
 interface ICartProviderProps {
   children: ReactNode;
@@ -9,7 +10,7 @@ interface ICartProviderProps {
 
 interface ICartContext {
   cart: ICart;
-  updateCart: (action: string, product: IProduct, count?: number) => void;
+  updateCart: (action: TAction, product: IProduct, count?: number) => void;
   clearCart: () => void;
 }
 
@@ -91,7 +92,7 @@ export function CartContextProvider({ children }: ICartProviderProps) {
   };
 
   // Updates the cart based on provided action
-  const updateCart = (action: string, product: IProduct, count = 1) => {
+  const updateCart = (action: TAction, product: IProduct, count = 1) => {
     switch (action) {
       case "add": {
         updateItem(product, "+", count);
