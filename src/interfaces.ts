@@ -70,3 +70,13 @@ export interface IFetchOptions {
 }
 
 export type TAlertColors = "green" | "red";
+export interface ICart {
+  cartId: number;
+  items: ICartItem[];
+  total: number;
+}
+
+export interface ICartItem {
+  item: IProduct;
+  quantity: number;
+}
