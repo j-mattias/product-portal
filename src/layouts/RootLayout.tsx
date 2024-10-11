@@ -1,5 +1,5 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
-import { Header } from "../components";
+import { Header, LoadingIndicator } from "../components";
 import { useFetchProducts } from "../customHooks";
 import { CartContextProvider } from "../contexts";
 
@@ -13,9 +13,9 @@ export function RootLayout() {
       <CartContextProvider>
         <Header />
         <main className="max-width">
-          {error && <div>{error}</div>}
-          {isPending && <div>Loading...</div>}
           <Outlet />
+          {error && <div>{error}</div>}
+          {isPending && <LoadingIndicator />}
         </main>
       </CartContextProvider>
       <ScrollRestoration />

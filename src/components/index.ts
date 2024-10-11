@@ -6,6 +6,7 @@ export * from "./Cart";
 export * from "./CartItem";
 export * from "./Header";
 export * from "./ImageGallery";
+export * from "./LoadingIndicator";
 export * from "./Pagination";
 export * from "./ProductCard";
 export * from "./ProductDetails";

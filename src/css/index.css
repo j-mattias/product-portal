@@ -12,6 +12,7 @@
 @import url("Header.css");
 @import url("HomePage.css");
 @import url("ImageGallery.css");
+@import url("LoadingIndicator.css");
 @import url("Pagination.css");
 @import url("ProductCard.css");
 @import url("ProductDetails.css");
