@@ -21,3 +21,8 @@
     }
   }
 }
+
+.added-to-cart {
+  scale: 1.02;
+  background-color: var(--success-col);
+}

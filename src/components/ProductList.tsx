@@ -26,7 +26,7 @@ export function ProductList({ products }: IProductListProps) {
 
   return (
     <>
-      {currentPage > numPages && products.length > 0 && <p className="results-error">{`Not enough results`}</p>}
+      {currentPage > numPages && products.length > 0 && <p className="results-error">{`Not enough results for page ${currentPage}`}</p>}
       <div className="product-list">
         {productResults.map((product) => (
           <ProductCard product={product} key={product.id} />

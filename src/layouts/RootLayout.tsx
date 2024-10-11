@@ -17,8 +17,8 @@ export function RootLayout() {
           {isPending && <div>Loading...</div>}
           <Outlet />
         </main>
-        <ScrollRestoration />
       </CartContextProvider>
+      <ScrollRestoration />
     </>
   );
 }

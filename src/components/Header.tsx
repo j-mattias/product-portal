@@ -1,9 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import { Cart } from ".";
 import { useState } from "react";
+import { useCartContext } from "../contexts";
 
 export function Header() {
   const [showCart, setShowCart] = useState(false);
+  const {cart} = useCartContext();
+  const cartItemCount = cart.items.length;
 
   const handleClick = () => {
     setShowCart((s) => !s);
@@ -27,6 +30,7 @@ export function Header() {
           </NavLink>
           <button className="navbar__cart-btn" onClick={handleClick}>
             <i className="fa-solid fa-cart-shopping"></i>
+            {cartItemCount > 0 && <span className="cart-item-count">{cartItemCount}</span>}
           </button>
         </nav>
       </header>
