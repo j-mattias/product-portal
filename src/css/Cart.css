@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100vh;
   backdrop-filter: brightness(40%);
+  z-index: 1;
 }
 
 .cart {
@@ -14,6 +15,8 @@
   padding: 1rem;
   display: flex;
   z-index: 5;
+  max-height: 80vh;
+  overflow-y: auto;
 
   .cart__close {
     position: absolute;
