@@ -1,4 +1,4 @@
-import { StarRating, Stock, Tags } from ".";
+import { AddToCartButton, StarRating, Tags } from ".";
 import { IProduct } from "../interfaces";
 
 interface IProductDetailsProps {
@@ -19,7 +19,7 @@ export function ProductDetails({ product }: IProductDetailsProps) {
         <h4 className="product-details__tags">Tags</h4>
         <Tags tags={product.tags} className="product-details__tags" />
       </div>
-      <Stock stock={product.stock} className="product-details__stock" />
+      <AddToCartButton className="product-details__add-btn" product={product} />
     </section>
   );
 }

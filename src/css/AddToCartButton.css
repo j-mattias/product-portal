@@ -1,0 +1,23 @@
+.add-to-cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: auto;
+
+  .add-to-cart__stock {
+    align-self: flex-end;
+    font-size: 1.1rem;
+    color: var(--faded-col);
+  }
+
+  .add-to-cart-btn {
+    font-size: 1rem;
+    padding: 1rem;
+
+    &::before {
+      content: "\f07a";
+      font-family: "Font Awesome 6 Free";
+      margin-right: 0.4rem;
+    }
+  }
+}

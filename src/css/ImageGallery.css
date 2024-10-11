@@ -13,6 +13,7 @@
   .image-gallery__wrapper {
     display: flex;
     justify-content: center;
+    gap: 0.5rem;
 
     .image-gallery__preview {
       object-fit: contain;
@@ -23,28 +24,3 @@
     }
   }
 }
-
-
-/* .image-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-
-  .image-gallery__hero {
-    grid-column: 1 / -1;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    aspect-ratio: 1 / 1;
-  }
-
-  .image-gallery__preview {
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    aspect-ratio: 1 / 1;
-    cursor: pointer;
-
-    grid-column: span 1;
-  }
-} */

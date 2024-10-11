@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import { IProduct } from "../interfaces"
-import { StarRating } from "./StarRating";
-import { Stock } from "./Stock";
+import { IProduct } from "../interfaces";
+import { AddToCartButton, StarRating } from ".";
 
 interface IProductDisplayProps {
   product: IProduct;
 }
 
-export function ProductDisplay({product} :IProductDisplayProps) {
-
+export function ProductDisplay({ product }: IProductDisplayProps) {
   return (
     <article className={`product-display`}>
       <Link className="product-display__link link-wrapper" to={`/product/${product.id}`}>
@@ -24,7 +22,7 @@ export function ProductDisplay({product} :IProductDisplayProps) {
         <StarRating rating={product.rating} numStars={5} />
         <p className="product-display__description">{product.description}</p>
         <h3 className="product-display__price">$ {product.price}</h3>
-        <Stock stock={product.stock} />
+        <AddToCartButton className="product-display__add-btn" product={product} />
       </div>
     </article>
   );

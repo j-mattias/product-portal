@@ -5,7 +5,7 @@ interface IStockProps {
 
 export function Stock({ stock, className }: IStockProps) {
   return (
-    <div className={`stock ${className ? className : ""}`}>
+    <div className={`stock ${className}`}>
       <i className="fa-solid fa-box"></i>
       <p className="stock__text">{stock}</p>
     </div>

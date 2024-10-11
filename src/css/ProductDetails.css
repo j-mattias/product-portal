@@ -23,8 +23,4 @@
     flex-direction: column;
     gap: 0.5rem;
   }
-
-  .product-details__stock {
-    font-size: 1.4rem;
-  }
 }
