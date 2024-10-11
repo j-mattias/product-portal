@@ -5,6 +5,13 @@
   padding: 0.5rem;
   border-radius: 4px;
 
+  .cart-item__link {
+    &:hover + .cart-item__info-wrapper > a > h5,
+    &:hover h5 {
+      text-decoration: underline;
+    }
+  }
+
   .cart-item__figure {
     max-width: 5rem;
   }

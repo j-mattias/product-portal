@@ -20,7 +20,7 @@ export function Cart({ handleClick }: ICartProps) {
         ) : (
           <>
             {cartItems.map((cartItem) => (
-              <CartItem cartItem={cartItem} key={cartItem.item.id} />
+              <CartItem cartItem={cartItem} key={cartItem.item.id} handleClick={handleClick} />
             ))}
             <h3 className="cart__total">Total: {cart.total.toFixed(2)}</h3>
             <button className="cart__btn-checkout">Checkout</button>

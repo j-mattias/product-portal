@@ -1,20 +1,26 @@
+import { Link } from "react-router-dom";
 import { useCartContext } from "../contexts";
 import { ICartItem } from "../interfaces";
 
 interface ICartItemProps {
   cartItem: ICartItem;
+  handleClick: () => void;
 }
 
-export function CartItem({ cartItem }: ICartItemProps) {
+export function CartItem({ cartItem, handleClick }: ICartItemProps) {
   const { updateCart } = useCartContext();
 
   return (
     <article className="cart-item box-shadow">
-      <figure className="cart-item__figure">
-        <img src={cartItem.item.thumbnail} alt="cart item image" />
-      </figure>
+      <Link className="cart-item__link" to={`product/${cartItem.item.id}`} onClick={handleClick}>
+        <figure className="cart-item__figure">
+          <img src={cartItem.item.thumbnail} alt={`${cartItem.item.title} packshot image`} />
+        </figure>
+      </Link>
       <div className="cart-item__info-wrapper">
-        <h5 className="cart-item__title">{cartItem.item.title}</h5>
+        <Link className="cart-item__link" to={`product/${cartItem.item.id}`} onClick={handleClick}>
+          <h5 className="cart-item__title">{cartItem.item.title}</h5>
+        </Link>
         <p className="cart-item__price">$ {cartItem.item.price}</p>
       </div>
       <div className="cart-item__btn-wrapper">

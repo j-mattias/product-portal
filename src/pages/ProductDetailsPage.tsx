@@ -5,10 +5,8 @@ import { ImageGallery, ProductDetails, ProductInfo, ProductReviews } from "../co
 export function ProductDetailsPage() {
   const { id } = useParams();
   const { products } = useProductsContext();
-  console.log(id);
 
   const product = products.find((product) => product.id === Number(id));
-  console.log(product);
 
   return (
     <>

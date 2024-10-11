@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface IImageGalleryProps {
   images: string[];
@@ -7,6 +7,11 @@ interface IImageGalleryProps {
 
 export function ImageGallery({ images, title }: IImageGalleryProps) {
   const [mainImage, setMainImage] = useState(images[0]);
+
+  // Update main image, when images change, won't update when clicking link in cart otherwise
+  useEffect(() => {
+    setMainImage(images[0]);
+  }, [images])
 
   // Switch the hero image depending on which preview was clicked
   const handleClick: React.MouseEventHandler<HTMLImageElement> = (e) => {
