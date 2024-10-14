@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { Cart } from ".";
+import { Cart, SearchForm } from ".";
 import { useState } from "react";
 import { useCartContext } from "../contexts";
 
@@ -19,9 +19,7 @@ export function Header() {
           <Link className="navbar__link navbar__link--title" to="/">
             Figment
           </Link>
-          <NavLink className="navbar__link" to="/">
-            Home
-          </NavLink>
+          <SearchForm />
           <NavLink className="navbar__link" to="products">
             Products
           </NavLink>
