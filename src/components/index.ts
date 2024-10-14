@@ -4,6 +4,7 @@ export * from "./App";
 export * from "./Carousel";
 export * from "./Cart";
 export * from "./CartItem";
+export * from "./Footer";
 export * from "./Header";
 export * from "./ImageGallery";
 export * from "./LoadingIndicator";
