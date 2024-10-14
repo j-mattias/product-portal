@@ -31,17 +31,6 @@
       }
 
       .cart-item-count {
-        /* position: absolute;
-        top: 20%;
-        left: 52.5%;
-        translate: -50% 0;
-        rotate: 45deg;
-        background-color: white;
-        display: block;
-        width: 0.5rem;
-        height: 0.5rem;
-        border: 1px solid black; */
-        padding: 0.2rem;
         margin-left: 0.3rem;
       }
     }

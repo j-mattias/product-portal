@@ -12,9 +12,11 @@ export function Cart({ handleClick }: ICartProps) {
   return (
     <>
       <div className="cart-backdrop" onClick={handleClick}></div>
-      <div className="cart flex-col">
-        <i className="cart__close fa-solid fa-x" onClick={handleClick}></i>
-        <h2 className="cart__title">Cart</h2>
+      <section className="cart flex-col">
+        <div className="cart__title-wrapper">
+          <h2 className="cart__title">Cart</h2>
+          <i className="cart__close fa-solid fa-x" onClick={handleClick}></i>
+        </div>
         {cartItems.length === 0 ? (
           <p className="cart__empty">The cart is empty.</p>
         ) : (
@@ -29,7 +31,7 @@ export function Cart({ handleClick }: ICartProps) {
             </button>
           </>
         )}
-      </div>
+      </section>
     </>
   );
 }
