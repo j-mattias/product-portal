@@ -8,7 +8,7 @@ export function SearchForm() {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
   const {setResults} = useSearchContext();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [_, setSearchParams] = useSearchParams();
 
   const fuseOptions = {
     keys: [
@@ -30,7 +30,6 @@ export function SearchForm() {
       return;
     }
     
-    console.log("q=",input)
     // Search the products ("db") for items matching the user input
     const result = fuse.search(input);
 

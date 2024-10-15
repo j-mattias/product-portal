@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Carousel, SearchForm } from "../components";
+import { Carousel } from "../components";
 import { useProductsContext } from "../contexts";
 import { IProduct } from "../interfaces";
 
@@ -42,7 +42,6 @@ export function HomePage() {
     <section className="home-page flex-col">
       <h1 className="home-page__title">Featured</h1>
       {featured.length > 0 && <Carousel products={featured} />}
-      <SearchForm />
     </section>
   );
 }
