@@ -24,7 +24,7 @@ export function HomePage() {
 
       // Keep track of used indexes
       used.add(index);
-      
+
       arr.push(productList[index]);
     }
 

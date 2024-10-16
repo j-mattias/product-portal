@@ -1,0 +1,27 @@
+.sub-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sub-category-list__item {
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  width: max-content;
+
+  a {
+    font-weight: 400;
+    text-transform: capitalize;
+    color: var(--dark-col);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.sub-category__wrapper {
+  display: flex;
+  gap: 2rem;
+}

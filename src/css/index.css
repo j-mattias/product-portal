@@ -7,6 +7,8 @@
 @import url("Carousel.css");
 @import url("Cart.css");
 @import url("CartItem.css");
+@import url("CategoryMenu.css");
+@import url("CategoryPage.css");
 @import url("EditProductPage.css");
 @import url("ErrorPage.css");
 @import url("Footer.css");
@@ -27,6 +29,7 @@
 @import url("SearchForm.css");
 @import url("StarRating.css");
 @import url("Stock.css");
+@import url("SubCategoryList.css");
 @import url("Tags.css");
 
 :root {

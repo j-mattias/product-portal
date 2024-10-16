@@ -80,3 +80,10 @@ export interface ICartItem {
   item: IProduct;
   quantity: number;
 }
+
+// Either an array of strings, or another property nested inside with the same structure
+export type TCategory = string[] | INestedCategories;
+
+export interface INestedCategories {
+  [category: string]: TCategory;
+}

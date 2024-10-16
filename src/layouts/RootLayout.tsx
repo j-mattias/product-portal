@@ -1,7 +1,8 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
-import { Footer, Header, LoadingIndicator } from "../components";
+import { CategoryMenu, Footer, Header, LoadingIndicator } from "../components";
 import { useFetchProducts } from "../customHooks";
 import { CartContextProvider, SearchContextProvider } from "../contexts";
+import { groupedCategories } from "../data";
 
 const URL = "https://dummyjson.com/products?limit=0";
 
@@ -13,6 +14,7 @@ export function RootLayout() {
       <CartContextProvider>
         <SearchContextProvider>
           <Header />
+          <CategoryMenu categoryGroups={groupedCategories} />
           <main className="max-width">
             <Outlet />
             {error && <div>{error}</div>}

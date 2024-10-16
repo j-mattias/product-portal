@@ -1,4 +1,5 @@
 export * from "./AddProductPage";
+export * from "./CategoryPage";
 export * from "./EditProductPage";
 export * from "./ErrorPage";
 export * from "./HomePage";
