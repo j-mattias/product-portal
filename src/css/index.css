@@ -143,3 +143,7 @@ a {
 .box-shadow {
   box-shadow: 0 0 4px var(--shadow-col);
 }
+
+.banner {
+  margin-block: 1rem;
+}

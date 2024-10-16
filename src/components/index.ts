@@ -1,6 +1,7 @@
 export * from "./AddToCartButton";
 export * from "./Alert";
 export * from "./App";
+export * from "./BannerLink";
 export * from "./Carousel";
 export * from "./Cart";
 export * from "./CartItem";
