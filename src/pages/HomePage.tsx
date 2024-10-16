@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Carousel } from "../components";
+import { Carousel, ProductSlider } from "../components";
 import { useProductsContext } from "../contexts";
 import { IProduct } from "../interfaces";
 
 export function HomePage() {
   const { products } = useProductsContext();
   const [featured, setFeatured] = useState<IProduct[]>([]);
+  const [popular, setPopular] = useState<IProduct[]>([]);
 
   // Get random products to put on as featured items
   const randomFeatured = (productList: IProduct[], returnLen: number) => {
@@ -35,6 +36,7 @@ export function HomePage() {
   useEffect(() => {
     if (products.length > 0) {
       setFeatured(randomFeatured(products, 5));
+      setPopular(randomFeatured(products, 10));
     }
   }, [products]);
 
@@ -42,6 +44,7 @@ export function HomePage() {
     <section className="home-page flex-col">
       <h1 className="home-page__title">Featured</h1>
       {featured.length > 0 && <Carousel products={featured} />}
+      {popular.length > 0 && <ProductSlider products={popular} title="Popular" />}
     </section>
   );
 }

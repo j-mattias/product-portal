@@ -17,6 +17,7 @@ export * from "./ProductForm";
 export * from "./ProductInfo";
 export * from "./ProductList";
 export * from "./ProductReviews";
+export * from "./ProductSlider";
 export * from "./SearchForm";
 export * from "./StarRating";
 export * from "./Stock";
