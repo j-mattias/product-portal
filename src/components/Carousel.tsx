@@ -33,7 +33,7 @@ export function Carousel({ products }: ICarouselProps) {
 
   return (
     <div className="carousel-container">
-      <div className="carousel b-radius-4">
+      <div className="carousel b-radius-4 box-shadow">
         {products.map((product, i) => (
           <div
             className={`carousel__slide ${currentIndex === i ? "active-slide" : ""}`}

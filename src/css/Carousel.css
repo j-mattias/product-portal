@@ -1,14 +1,16 @@
 .carousel {
   background-color: var(--white-col);
   width: 100%;
-  min-height: 25rem;
   height: fit-content;
   position: relative;
   margin: 0 auto;
-  
+
+  display: grid;
+  grid-template-areas: "product";
+
   .carousel__slide {
+    grid-area: product;
     transition: opacity 0.3s ease-out;
-    position: absolute;
     opacity: 0;
     height: 100%;
     pointer-events: none;
@@ -18,7 +20,7 @@
     opacity: 1;
     pointer-events: all;
   }
-  
+
   .carousel-btn {
     position: absolute;
     display: flex;
@@ -32,7 +34,7 @@
     padding: 0.6rem;
     cursor: pointer;
     transition: all 0.3s ease-out;
-    
+
     &:hover {
       scale: 1.2;
     }
@@ -52,7 +54,7 @@
   margin: 0 auto;
   display: flex;
   gap: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   list-style: none;
 
   .carousel-dots__dot {
@@ -64,11 +66,16 @@
     cursor: pointer;
 
     &:hover {
-      background: radial-gradient(circle at center, var(--dark-col) 0%, var(--dark-col) 50%, transparent 51%);
+      background: radial-gradient(
+        circle at center,
+        var(--dark-col) 0%,
+        var(--dark-col) 50%,
+        transparent 51%
+      );
     }
 
     &.dot-active {
       background-color: var(--dark-col);
-    }    
+    }
   }
 }
