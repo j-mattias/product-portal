@@ -4,9 +4,10 @@ import { INestedCategories } from "../interfaces";
 
 interface ICategoryMenuProps {
   categoryGroups: INestedCategories;
+  className?: string;
 }
 
-export function CategoryMenu({ categoryGroups }: ICategoryMenuProps) {
+export function CategoryMenu({ categoryGroups, className }: ICategoryMenuProps) {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   const handleClick = (category: string) => {
@@ -14,7 +15,7 @@ export function CategoryMenu({ categoryGroups }: ICategoryMenuProps) {
   };
 
   return (
-    <nav className="category-nav">
+    <nav className={`category-nav ${className ? className : ""}`}>
       <ul className="category-menu max-width">
         {Object.keys(categoryGroups).map((category) => (
           <li

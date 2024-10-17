@@ -23,7 +23,7 @@
         filter: drop-shadow(0 0 4px white);
       }
     }
-  
+
     .search-form__btn {
       position: absolute;
       right: 0;
@@ -32,12 +32,18 @@
       background-color: transparent;
       border-radius: 0 2rem 2rem 0;
       padding: 1rem;
-  
+
       .fa-magnifying-glass {
         color: var(--dark-col);
         font-size: 1rem;
       }
     }
   }
+}
 
+@media (max-width: 780px) {
+  .search-form {
+    grid-area: bottom;
+    margin-bottom: 1rem;
+  }
 }

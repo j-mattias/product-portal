@@ -14,7 +14,7 @@ export function RootLayout() {
       <CartContextProvider>
         <SearchContextProvider>
           <Header />
-          <CategoryMenu categoryGroups={groupedCategories} />
+          <CategoryMenu categoryGroups={groupedCategories} className="category-menu--root" />
           <main className="max-width">
             <Outlet />
             {error && <div>{error}</div>}
