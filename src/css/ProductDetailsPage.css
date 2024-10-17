@@ -1,5 +1,18 @@
 .product-details-page {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  grid-template-areas:
+    "gallery details"
+    "info reviews";
+  grid-auto-columns: 1fr;
   gap: 1rem;
+}
+
+@media (max-width: 780px) {
+  .product-details-page {
+    grid-template-areas:
+      "gallery"
+      "details"
+      "info"
+      "reviews";
+  }
 }

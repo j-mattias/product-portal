@@ -22,7 +22,7 @@ export function ImageGallery({ images, title }: IImageGalleryProps) {
   return (
     <figure className="image-gallery">
       <img
-        className="image-gallery__hero b-radius-4"
+        className="image-gallery__hero b-radius-4 box-shadow"
         src={mainImage}
         alt={`${title} packshot image`}
       />

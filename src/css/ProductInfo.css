@@ -1,7 +1,9 @@
 .product-info {
+  grid-area: info;
+
   .product-info__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .product-info__wrapper {
@@ -9,11 +11,13 @@
     border-inline: none;
     padding-block: 1rem;
 
-    &:first-child, &:nth-child(2) {
+    &:first-child,
+    &:nth-child(2) {
       border-bottom: none;
     }
 
-    &:last-child, &:nth-child(3) {
+    &:last-child,
+    &:nth-child(3) {
       border-bottom: none;
     }
 

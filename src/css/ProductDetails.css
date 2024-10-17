@@ -1,4 +1,6 @@
 .product-details {
+  grid-area: details;
+
   .product-details__title-wrapper {
     .product-details__brand {
       color: var(--faded-col);

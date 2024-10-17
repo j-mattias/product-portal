@@ -1,4 +1,6 @@
 .product-reviews {
+  grid-area: reviews;
+
   .product-review {
     .product-review__wrapper {
       display: flex;

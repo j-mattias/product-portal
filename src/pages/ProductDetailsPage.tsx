@@ -9,19 +9,17 @@ export function ProductDetailsPage() {
   const product = products.find((product) => product.id === Number(id));
 
   return (
-    <>
+    <section className="product-details-page">
       {!product ? (
-        <section className="product-details-page">
-          <h1>Could not find that product</h1>
-        </section>
+        <h1>Could not find that product</h1>
       ) : (
-        <section className="product-details-page">
+        <>
           <ImageGallery images={product.images} title={product.title} />
           <ProductDetails product={product} />
           <ProductInfo product={product} />
           <ProductReviews reviews={product.reviews} />
-        </section>
+        </>
       )}
-    </>
+    </section>
   );
 }
