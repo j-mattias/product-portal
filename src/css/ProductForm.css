@@ -60,3 +60,18 @@
     }
   }
 }
+
+@media (max-width: 780px) {
+  .product-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 570px) {
+  .product-form {
+    .price-stock-wrapper,
+    .dimensions-wrapper {
+      flex-wrap: wrap;
+    }
+  }
+}
