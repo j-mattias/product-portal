@@ -16,8 +16,8 @@ export function RootLayout() {
           <Header />
           <CategoryMenu categoryGroups={groupedCategories} className="category-menu--root" />
           <main className="max-width">
-            <Outlet />
-            {error && <div>{error}</div>}
+            {error && <div className="error">{error}</div>}
+            {!error && <Outlet />}
             {isPending && <LoadingIndicator />}
           </main>
           <Footer />

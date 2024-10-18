@@ -67,7 +67,7 @@ body {
   font-family: var(--text-font);
   font-style: normal;
   color: var(--dark-col);
-  background-color: var(--bg-col);
+  background: linear-gradient(var(--bg-col) 0%, var(--offset-col-1));
   min-height: 100vh;
 }
 
