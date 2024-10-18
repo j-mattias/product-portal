@@ -41,14 +41,14 @@ export function Header() {
               </NavLink>
               <CategoryMenu categoryGroups={groupedCategories} className="category-menu--header" />
             </div>
-            <button className="navbar__cart-btn" onClick={handleClick}>
+            <button className={`navbar__cart-btn ${cartItemCount > 0 ? "cart-has-items" : ""}`} onClick={handleClick}>
               <i className="fa-solid fa-cart-shopping"></i>
               {cartItemCount > 0 && <span className="cart-item-count">{cartItemCount}</span>}
             </button>
           </div>
         </nav>
       </header>
-      {showCart && <Cart handleClick={handleClick} />}
+      <Cart handleClick={handleClick} showCart={showCart} />
     </>
   );
 }

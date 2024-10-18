@@ -47,6 +47,11 @@
       position: relative;
       display: flex;
       align-items: center;
+      opacity: 0.6;
+
+      &.cart-has-items {
+        opacity: 1;
+      }
 
       &:hover {
         opacity: 1;
