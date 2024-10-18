@@ -10,11 +10,13 @@ export function SearchForm() {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    const target = e.target as HTMLFormElement;
 
     if (search(input)) {
       // Navigate to search and update the search params
       navigate("search");
       setSearchParams({ q: input });
+      target.reset();
     }
   };
 
