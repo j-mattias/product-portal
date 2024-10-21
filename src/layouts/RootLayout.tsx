@@ -1,5 +1,5 @@
 import { Outlet, ScrollRestoration } from "react-router-dom";
-import { CategoryMenu, Footer, Header, LoadingIndicator } from "../components";
+import { CategoryMenu, Footer, Header, LoadingIndicator, ScrollToTop } from "../components";
 import { useFetchProducts } from "../customHooks";
 import { CartContextProvider, SearchContextProvider } from "../contexts";
 import { groupedCategories } from "../data";
@@ -19,6 +19,7 @@ export function RootLayout() {
             {error && <div className="error">{error}</div>}
             {!error && <Outlet />}
             {isPending && <LoadingIndicator />}
+            <ScrollToTop />
           </main>
           <Footer />
         </SearchContextProvider>

@@ -7,7 +7,7 @@ interface IProductListProps {
   products: IProduct[];
 }
 
-const MAX_RESULTS = 12;
+const MAX_RESULTS = 24;
 
 export function ProductList({ products }: IProductListProps) {
   const [searchParams] = useSearchParams();

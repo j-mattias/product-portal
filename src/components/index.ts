@@ -20,6 +20,7 @@ export * from "./ProductInfo";
 export * from "./ProductList";
 export * from "./ProductReviews";
 export * from "./ProductSlider";
+export * from "./ScrollToTop";
 export * from "./SearchForm";
 export * from "./StarRating";
 export * from "./Stock";

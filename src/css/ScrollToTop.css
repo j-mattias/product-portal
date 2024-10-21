@@ -1,0 +1,32 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: -4rem;
+  right: 5%;
+
+  background-color: var(--bg-col);
+  border-radius: 50%;
+  padding: 1.2rem;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: hsl(from var(--bg-col) h s calc(l - 10));
+  }
+  
+  .fa-arrow-up {
+    font-size: 1.5rem;
+  }
+
+  &.show-to-top {
+    bottom: 2rem;
+  }
+}
+
+@media (max-width: 1375px) {
+  .scroll-to-top {
+    right: 50%;
+    translate: 50% 0;
+  }
+}
