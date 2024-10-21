@@ -7,6 +7,7 @@ export * from "./Cart";
 export * from "./CartItem";
 export * from "./CategoryMenu";
 export * from "./Footer";
+export * from "./FormInput";
 export * from "./Header";
 export * from "./ImageGallery";
 export * from "./LoadingIndicator";

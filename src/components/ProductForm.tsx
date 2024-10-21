@@ -3,6 +3,7 @@ import { useProductsContext } from "../contexts";
 import { categories } from "../data";
 import { fetchData, getNewId, validateProduct } from "../helpers";
 import { IProduct, TAlertColors } from "../interfaces";
+import { FormInput } from ".";
 
 type TType = "Add" | "Edit";
 
@@ -123,67 +124,56 @@ export function ProductForm({ type, product, handleMessage }: IProductFormProps)
         handleMessage(error.message, "red");
       }
     }
-    console.log("productObj", productObj);
   };
 
   return (
     <form className="product-form" onSubmit={handleSubmit}>
-      <label className="input-label" htmlFor="input-title">
-        <span className="input-label__text">Product title</span>
-        <input
-          type="text"
-          id="input-title"
-          name="title"
-          placeholder="Oppo A57"
-          defaultValue={product ? product.title : ""}
-        />
-      </label>
-      <label className="input-label" htmlFor="input-brand">
-        <span className="input-label__text">Brand</span>
-        <input
-          type="text"
-          id="input-brand"
-          name="brand"
-          placeholder="Oppo"
-          defaultValue={product ? product.brand! : ""}
-        />
-      </label>
+      <FormInput
+        labelText="Product title"
+        type="text"
+        id="input-title"
+        name="title"
+        placeholder="Oppo A57"
+        defaultValue={product ? product.title : ""}
+      />
+      <FormInput
+        labelText="Brand"
+        type="text"
+        id="input-brand"
+        name="brand"
+        placeholder="Oppo"
+        defaultValue={product ? product.brand! : ""}
+      />
       <div className="price-stock-wrapper">
-        <label className="input-label" htmlFor="input-price">
-          <span className="input-label__text">Price</span>
-          <input
-            type="number"
-            id="input-price"
-            name="price"
-            min={0.99}
-            step={0.01}
-            placeholder="249.99"
-            defaultValue={product ? product.price : ""}
-          />
-        </label>
-        <label className="input-label" htmlFor="input-stock">
-          <span className="input-label__text">Stock</span>
-          <input
-            type="number"
-            id="input-stock"
-            name="stock"
-            min={1}
-            step={1}
-            placeholder="76"
-            defaultValue={product ? product.stock : ""}
-          />
-        </label>
-      </div>
-      <label className="input-label" htmlFor="input-tags">
-        <span className="input-label__text">Tags (comma separated)</span>
-        <input
-          type="text"
-          id="input-tags"
-          name="tags"
-          placeholder="smartphones,oppo"
-          defaultValue={product ? product.tags : ""}
+        <FormInput
+          labelText="Price"
+          type="number"
+          id="input-price"
+          name="price"
+          placeholder="249.99"
+          defaultValue={product ? product.price : ""}
+          min={0.99}
+          step={0.01}
         />
-      </label>
+        <FormInput
+          labelText="Stock"
+          type="number"
+          id="input-stock"
+          name="stock"
+          placeholder="76"
+          defaultValue={product ? product.stock : ""}
+          min={1}
+          step={1}
+        />
+      </div>
+      <FormInput
+        labelText="Tags (comma separated)"
+        type="text"
+        id="input-tags"
+        name="tags"
+        placeholder="smartphones,oppo"
+        defaultValue={product ? product.tags.join(",") : ""}
+      />
       <label className="input-label" htmlFor="input-category">
         <span className="input-label__text">Category</span>
         <select
@@ -203,42 +193,36 @@ export function ProductForm({ type, product, handleMessage }: IProductFormProps)
       </label>
       <p className="dimensions-title">Dimensions (cm)</p>
       <div className="dimensions-wrapper">
-        <label className="input-label" htmlFor="input-width">
-          <span className="input-label__text">Width</span>
-          <input
-            type="number"
-            id="input-width"
-            name="width"
-            min={0.01}
-            step={0.01}
-            placeholder="29.52"
-            defaultValue={product ? product.dimensions.width : ""}
-          />
-        </label>
-        <label className="input-label" htmlFor="input-height">
-          <span className="input-label__text">Height</span>
-          <input
-            type="number"
-            id="input-height"
-            name="height"
-            min={0.01}
-            step={0.01}
-            placeholder="11.25"
-            defaultValue={product ? product.dimensions.height : ""}
-          />
-        </label>
-        <label className="input-label" htmlFor="input-depth">
-          <span className="input-label__text">Depth</span>
-          <input
-            type="number"
-            id="input-depth"
-            name="depth"
-            min={0.01}
-            step={0.01}
-            placeholder="14.41"
-            defaultValue={product ? product.dimensions.depth : ""}
-          />
-        </label>
+        <FormInput
+          labelText="Width"
+          type="number"
+          id="input-width"
+          name="width"
+          placeholder="29.52"
+          defaultValue={product ? product.dimensions.width : ""}
+          min={0.01}
+          step={0.01}
+        />
+        <FormInput
+          labelText="Height"
+          type="number"
+          id="input-height"
+          name="height"
+          placeholder="11.25"
+          defaultValue={product ? product.dimensions.height : ""}
+          min={0.01}
+          step={0.01}
+        />
+        <FormInput
+          labelText="Depth"
+          type="number"
+          id="input-depth"
+          name="depth"
+          placeholder="14.41"
+          defaultValue={product ? product.dimensions.depth : ""}
+          min={0.01}
+          step={0.01}
+        />
       </div>
       <label className="input-label" htmlFor="input-description">
         <span className="input-label__text">Description</span>
@@ -249,38 +233,23 @@ export function ProductForm({ type, product, handleMessage }: IProductFormProps)
           defaultValue={product ? product.description : ""}
         />
       </label>
-      <label className="input-label" htmlFor="input-thumbnail">
-        <span className="input-label__text">Thumbnail (url)</span>
-        <input
-          type="text"
-          id="input-thumbnail"
-          name="thumbnail"
-          placeholder="https://cdn/../thumbnail.png"
-          defaultValue={product ? product.thumbnail : ""}
-        />
-      </label>
-      <label className="input-label" htmlFor="input-images">
-        <span className="input-label__text">Images (url)</span>
-        <input
-          type="text"
-          id="input-images"
-          name="image"
-          placeholder="https://cdn/../1.png"
-          defaultValue={product ? product.images[0] : ""}
-        />
-        <input
-          type="text"
-          name="image"
-          placeholder="https://cdn/../2.png"
-          defaultValue={product ? product.images[1] : ""}
-        />
-        <input
-          type="text"
-          name="image"
-          placeholder="https://cdn/../3.png"
-          defaultValue={product ? product.images[2] : ""}
-        />
-      </label>
+      <FormInput
+        labelText="Thumbnail (url)"
+        type="text"
+        id="input-thumbnail"
+        name="thumbnail"
+        placeholder="https://cdn/../thumbnail.png"
+        defaultValue={product ? product.thumbnail : ""}
+      />
+      <FormInput
+        labelText="Images (url)"
+        type="text"
+        id="input-images"
+        name="image"
+        placeholder="https://cdn/../1.png"
+        defaultValue={product ? product.images : ""}
+        numInputs={4}
+      />
       <button className="product-form__submit" type="submit">
         Submit
       </button>
