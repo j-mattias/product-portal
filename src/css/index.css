@@ -31,13 +31,14 @@
 @import url("RootLayout.css");
 @import url("ScrollToTop.css");
 @import url("SearchForm.css");
+@import url("SearchPage.css");
 @import url("StarRating.css");
 @import url("Stock.css");
 @import url("SubCategoryList.css");
 @import url("Tags.css");
 
 :root {
-  --bg-col: #546170;
+  --bg-col: #e4e4e4;
   --offset-col-1: #2f3544;
   --offset-col-2: #242838;
   --dark-col: #16181e;
@@ -52,7 +53,7 @@
   --text-font: "Hind", sans-serif;
   --heading-font: "Montserrat", sans-serif;
 
-  --max-width: 952px;
+  --max-width: 1000px;
 }
 
 * {
@@ -69,7 +70,7 @@ body {
   font-family: var(--text-font);
   font-style: normal;
   color: var(--dark-col);
-  background: linear-gradient(var(--bg-col) 0%, var(--offset-col-1));
+  background-color: var(--bg-col);
   min-height: 100vh;
 }
 

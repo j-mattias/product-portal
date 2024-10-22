@@ -15,9 +15,15 @@
   .product-details__tags {
     text-transform: capitalize;
   }
-
+  
   .product-details__category {
-    text-decoration: underline;
+    color: var(--dark-col);
+    font-family: var(--text-font);
+    font-weight: 400;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .product-details__tags-wrapper {

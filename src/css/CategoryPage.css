@@ -1,5 +1,6 @@
 .category-page {
   .category-page__title {
     text-transform: capitalize;
+    text-align: center;
   }
 }

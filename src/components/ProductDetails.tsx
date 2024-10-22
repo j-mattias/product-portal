@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AddToCartButton, StarRating, Tags } from ".";
 import { IProduct } from "../interfaces";
 
@@ -8,7 +9,7 @@ interface IProductDetailsProps {
 export function ProductDetails({ product }: IProductDetailsProps) {
   return (
     <section className="product-details flex-col">
-      <p className="product-details__category">{product.category}</p>
+      <Link className="product-details__category" to={`/category/${product.category}`}>{product.category}</Link>
       <div className="product-details__title-wrapper">
         <h1 className="product-details__title">{product.title}</h1>
         {product.brand && <h4 className="product-details__brand">{product.brand}</h4>}

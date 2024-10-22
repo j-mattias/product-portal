@@ -9,6 +9,7 @@
   flex-direction: column;
   cursor: default;
   width: max-content;
+  gap: 0.5rem;
 
   a {
     font-weight: 400;
