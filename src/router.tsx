@@ -10,9 +10,10 @@ export const router = createBrowserRouter(
       <Route element={<ProductDetailsPage />} path="product/:id" />
       <Route element={<AddProductPage />} path="add-product" />
       <Route element={<EditProductPage />} path="edit-product/:id" />
-      <Route element={<SearchPage />} path="search" /> 
+      <Route element={<SearchPage />} path="search" />
       <Route element={<CategoryPage />} path="category/:name" />
       <Route element={<ErrorPage />} path="*" />
     </Route>
-  )
+  ),
+  { basename: "/product-portal/" }
 );
