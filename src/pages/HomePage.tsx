@@ -44,9 +44,9 @@ export function HomePage() {
     <section className="home-page flex-col">
       <h1 className="home-page__title">Featured</h1>
       {featured.length > 0 && <Carousel products={featured} />}
-      <img className="banner b-radius-4" src="src/assets/freeShipping_banner.jpg" alt="Free shipping banner" />
+      <img className="banner b-radius-4" src="./src/assets/freeShipping_banner.jpg" alt="Free shipping banner" />
       {popular.length > 0 && <ProductSlider products={popular} title="Popular" />}
-      <BannerLink banner="src/assets/laptop_banner.jpg" link="category/laptops" promoName="Laptop" />
+      <BannerLink banner="./src/assets/laptop_banner.jpg" link="category/laptops" promoName="Laptop" />
     </section>
   );
 }
