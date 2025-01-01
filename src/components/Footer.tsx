@@ -2,20 +2,20 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="footer-wrapper max-width">
-        <section className="footer__info">
+        <section className="footer__info footer__item">
           <h3>Information</h3>
           <p>Contact us</p>
           <p>FAQ</p>
           <p>Terms and conditions</p>
           <p>Delivery</p>
         </section>
-        <section className="footer__about">
+        <section className="footer__about footer__item">
           <h3>About us</h3>
           <p>About Figment</p>
           <p>Our stores</p>
           <p>Careers</p>
         </section>
-        <section className="footer__discover">
+        <section className="footer__discover footer__item">
           <h3>Discover</h3>
           <p>Categories</p>
           <p>Brands</p>

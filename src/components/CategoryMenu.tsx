@@ -25,7 +25,7 @@ export function CategoryMenu({ categoryGroups, className }: ICategoryMenuProps) 
               openCategory === category ? "category-menu__main--active" : ""
             }`}
           >
-            {category}
+            <span className="category-menu__name">{category}</span>
             {openCategory === category && (
               <ul className="category-menu__dropdown">
                 <h3 className="category-menu__title">{category}</h3>

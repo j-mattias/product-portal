@@ -82,6 +82,24 @@
         transition: none;
         font-size: 1rem;
 
+        .category-menu__name {
+          display: flex;
+          width: 100%;
+          &::after {
+              content: "\f078";
+              font-family: FontAwesome;
+              margin-left: auto;
+          }
+
+          &:has(~ .category-menu__dropdown) {
+            &::after {
+              content: "\f077";
+              font-family: FontAwesome;
+              margin-left: auto;
+            }
+          }
+        }
+
         .category-menu__dropdown {
           position: relative;
           box-shadow: none;
@@ -89,6 +107,10 @@
           padding-top: 1rem;
           margin-top: 1rem;
           border-top: 2px solid var(--dark-col);
+
+          .sub-category__wrapper {
+            flex-direction: column;
+          }
 
           .category-menu__title {
             display: none;
