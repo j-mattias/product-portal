@@ -131,6 +131,7 @@
 
       .hamburger-close-icon {
         align-self: flex-end;
+        margin-top: .5rem;
       }
 
       #hamburger-nav:checked ~ .navbar__links-wrapper {
